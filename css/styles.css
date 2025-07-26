@@ -1,0 +1,29 @@
+header.bg-cover {
+    background-image: url("../assets/bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.paddingHeader {
+    padding: 100px;
+}
+
+/* Lista de clientes estilizada */
+#clientsList .list-group-item {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #333;
+}
+
+/* Efeito hover */
+#clientsList .list-group-item:hover {
+  background-color: #2a2a2a;
+}
+
+/* Botão logout com margem em telas menores */
+@media (max-width: 576px) {
+  button.btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
