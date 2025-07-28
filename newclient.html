@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mari Ink - Novo Cliente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <form id="clientForm" class="bg-dark text-light p-4 rounded">
+        <h2>Cadastro de Cliente</h2>
+      
+        <div class="mb-3">
+          <label class="form-label">Nome</label>
+          <div class="d-flex gap-2">
+            <input type="text" class="form-control" name="first_name" placeholder="Primeiro nome" required>
+            <input type="text" class="form-control" name="last_name" placeholder="Sobrenome" required>
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Gênero</label>
+          <select class="form-select" name="gender" required>
+            <option value="">Selecione</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Data de nascimento</label>
+          <input type="date" class="form-control" name="birth_date" required>
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Telefone</label>
+          <input type="text" class="form-control" name="phone" placeholder="(99) 99999-9999">
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Rede Social</label>
+          <input type="text" class="form-control" name="social_media" placeholder="@usuario">
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Endereço</label>
+          <input type="text" class="form-control mb-2" name="address_street" placeholder="Rua" required>
+          <input type="text" class="form-control mb-2" name="address_number" placeholder="Número" required>
+          <input type="text" class="form-control mb-2" name="address_neighborhood" placeholder="Bairro" required>
+          <input type="text" class="form-control mb-2" name="address_city" placeholder="Cidade" required>
+          <input type="text" class="form-control mb-2" name="address_state" placeholder="Estado" required>
+          <input type="text" class="form-control" name="zip_code" placeholder="CEP" required>
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Estilos favoritos</label>
+          <input type="text" class="form-control" name="fav_style" placeholder="Old school, realismo, etc.">
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Quantidade de tatuagens</label>
+          <input type="number" class="form-control" name="number_of_tattoos" min="0">
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Alergias</label>
+          <input type="text" class="form-control" name="allergies" placeholder="Nenhuma, Latex, etc.">
+        </div>
+      
+        <div class="mb-3">
+          <label class="form-label">Primeira vez como cliente?</label>
+          <select class="form-select" name="is_first_client">
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
+        </div>
+      
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+      </form>
+      
+<script src="javascript/newclient.js"></script>
+</body>
+</html>
