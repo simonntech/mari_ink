@@ -24,10 +24,21 @@ if (clientsList) {
             return res.json();
         })
         .then(data => {
-            clientsList.innerHTML = "";
             data.forEach(client => {
                 const li = document.createElement("li");
-                li.innerHTML = `${client.first_name} ${client.last_name}`;
+
+                li.className = "list-group-item d-flex justify-content-between align-items-center";
+
+                li.innerHTML = `
+                    <span class="col-3 text-break"><a href="client.html?client_id=${client.client_id}" class="text-decoration-none"> ${client.first_name} ${client.last_name}</a></span>
+                    <span class="col-2">${client.gender}</span>
+                    <span class="col-3 text-break p-2">${client.social_media}</span>
+                    <span class="col-3 text-break">${client.phone}</span>
+                    <span class="col-1 text-end">
+                        <button class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                        </span>
+                `;
                 clientsList.appendChild(li);
             });
         });
