@@ -32,6 +32,10 @@ fetch(`${API_URL}/clients/${clientId}`, {
         const formatedLastTattooDate = client.last_tattoo_date
             ? formatISODateBR(client.last_tattoo_date)
             : "Não informada";
+        const editBtn = document.getElementById("editBtn");
+        editBtn.innerHTML = `
+            <a href="editclient.html?client_id=${client.client_id}"><button class="btn btn-warning mt-3"><i class="fas fa-edit"></i>Editar</button></a>
+        `
 
         clientDetails.innerHTML = `
             <ul class="list-group">
