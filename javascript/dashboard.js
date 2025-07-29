@@ -31,11 +31,9 @@ if (clientsList) {
                 
                 li.innerHTML = `
                 <span class="col-3 text-break"><a href="client.html?client_id=${client.client_id}" class="text-decoration-none"> ${client.first_name} ${client.last_name}</a></span>
-                <span class="col-2">${client.gender}</span>
-                <span class="col-3 text-break p-2">${client.social_media}</span>
-                <span class="col-3 text-break">${client.phone}</span>
+                <span class="col-5 text-break">${client.phone}</span>
                     <span class="col-1 text-end">
-                        <button class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></button>
+                        <a href="editclient.html?client_id=${client.client_id}"><button class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i></button></a>
                         <button class="btn btn-sm btn-danger delete-btn"><i class="fas fa-trash-alt"></i></button>
                         </span>
                         `;

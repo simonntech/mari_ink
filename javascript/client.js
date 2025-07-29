@@ -29,11 +29,13 @@ fetch(`${API_URL}/clients/${clientId}`, {
     .then(client => {
         const formatedBirthDate = formatISODateBR(client.birth_date);
         const formatedCreatedDate = formatISODateBR(client.registration_date);
-        const formatedLastTattooDate = formatISODateBR(client.last_tattoo_date);
+        const formatedLastTattooDate = client.last_tattoo_date
+            ? formatISODateBR(client.last_tattoo_date)
+            : "Não informada";
 
         clientDetails.innerHTML = `
-            <ul class="list-group bg-dark text-light">
-                <li class="list-group-item"><strong>Nome:</strong> ${client.first_name} ${client.last_name}</li>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-dark"><strong>Nome:</strong> ${client.first_name} ${client.last_name}</li>
                 <li class="list-group-item"><strong>Gênero:</strong> ${client.gender}</li>
                 <li class="list-group-item"><strong>Cadastrado em:</strong> ${formatedCreatedDate}</li>
                 <li class="list-group-item"><strong>Última tattoo:</strong> ${formatedLastTattooDate}</li>
@@ -42,13 +44,12 @@ fetch(`${API_URL}/clients/${clientId}`, {
                 <li class="list-group-item"><strong>Nascimento:</strong> ${formatedBirthDate}</li>
                 <li class="list-group-item"><strong>Endereço:</strong> ${client.address_street}, ${client.address_number}<br>Bairro: ${client.address_neighborhood}<br>Cidade: ${client.address_city}-${client.address_state}<br>CEP: ${client.zip_code}</li>
                 <li class="list-group-item"><strong>Estilos favoritos:</strong> ${client.fav_style}</li>
-                <li class="list-group-item"><strong>Quantidade de tatuagens:</strong> ${client.number_of_tattoos}</li>
+                <li class="list-group-item"><strong>Tatuagens feitas:</strong> ${client.number_of_tattoos}</li>
                 <li class="list-group-item"><strong>Alergias:</strong> ${client.allergies}</li>
                 <li class="list-group-item">
-                    <strong>Primeiro Cliente?:</strong>
-                    ${client.is_first_client
-                    ? '<span class="text-success">Sim ✅</span>'
-                    : '<span class="text-secondary">Não ❌</span>'}
+                    <strong>${client.is_first_client
+                    ? '<span class="text-secondary">Cliente novo</span>'
+                    : '<span class="text-secondary">Cliente antigo</span>'}</strong>
                 </li>
             </ul>
         `;

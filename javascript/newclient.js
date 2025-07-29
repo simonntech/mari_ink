@@ -27,8 +27,9 @@
       });
 
       if (response.ok) {
-        alert("Cliente cadastrado com sucesso!");
+        alert("Cliente cadastrado(a) com sucesso!");
         this.reset();
+        window.location.href = "dashboard.html";
       } else {
         const result = await response.json();
         alert("Erro ao cadastrar: " + (result.message || response.statusText));
