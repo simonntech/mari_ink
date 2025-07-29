@@ -33,7 +33,8 @@ if (clientsList) {
                 clientsList.innerHTML = `
                     <li class="list-group-item fw-bold d-flex justify-content-between">
                         <span class="col-3">Nome</span>
-                        <span class="col-3">Contatos</span>
+                        <span class="col-5">Contatos</span>
+                        <span class="col-5"></span>
                         <span class="col-1 text-end">Ações</span>
                     </li>
                 `;
